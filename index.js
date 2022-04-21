@@ -44,9 +44,10 @@ const questions = [
         message: 'Add your email address to be reached for questions?',
     },
     {
-        type: '',
+        type: 'list',
         name: 'license',
         message: 'What kind of lincense would you like to add',
+        choices: ['MIT','Apache','Modzilla Public','Boost Software','GNU General Public'],
     },
 ];
 
