@@ -47,6 +47,11 @@ function generateMarkdown(data) {
   ## Description:
   ${data.description}
 
+  * [Installation](#Installation)
+  * [Usage](#Usage)
+  * [Contributors](#Contributors)
+  * [Tests](#Tests)
+
   ## Installation:
   ${data.installation}
 
