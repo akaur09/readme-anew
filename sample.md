@@ -1,9 +1,9 @@
-# test
+# loki
   
   [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
   ## Description:
-  test
+  an app that is designed to create doggy clothes and hats for your little paw friends
 
   * [Installation](#Installation)
   * [Usage](#Usage)
@@ -11,17 +11,17 @@
   * [Tests](#Tests)
 
   ## Installation:
-  test
+  none
 
   ## Usage:
-  test
+  helps to make designing clothes for pets easier
 
   ## Contributors:
-  test
+  me
 
   ## Tests:
-  test
+  none
 
   ## Contact Me:
-  Please reach out to me if you have any questions at test and my Github profile is test.
+  Please reach out to me if you have any questions at loki@gmail.com and my Github profile is akaur09.
   
