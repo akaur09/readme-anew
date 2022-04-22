@@ -71,7 +71,7 @@ function init() {
                 type: 'list',
                 name: 'license',
                 message: questions[8],
-                choices: ['MIT','Apache','Modzilla Public','Boost Software','GNU General Public'],
+                choices: ['MIT','Apache','Modzilla','Boost','GNU','None'],
             },
         ])
         .then (answers =>{
