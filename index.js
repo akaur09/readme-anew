@@ -1,7 +1,7 @@
 // TODO: Include packages needed for this application
-const fs = require ("fs");
-const inquirer = require ("inquirer");
-const genMrkDwn = require ("./utils/generateMarkdown");
+const fs = require ('fs');
+const inquirer = require ('inquirer');
+const genMrkDwn = require ('./utils/generateMarkdown.js');
 // TODO: Create an array of questions for user input
 const questions = [
     "What is the title of your project?",
@@ -51,7 +51,7 @@ function init() {
             },
             {
                 type: 'input',
-                name: 'questions1',
+                name: 'question1',
                 message: questions[6],
             },
             {
@@ -68,13 +68,13 @@ function init() {
         ])
         .then (answers =>{
             console.log(answers);
-            writeToFile("newREADME.md", genMrkDwn(answers));
+            writeToFile("NewREADME.md", genMrkDwn(answers));
         })   
 }
 
 // TODO: Create a function to write README file
-function writeToFile(data) {
-    fs.writeFile('newREADME.md',data, (err)=>{
+function writeToFile(fileName,data) {
+    fs.writeFile(fileName,data, genMrkDwn, (err)=>{
         err ? console.log(err): console.log('README successfully created')
     });
 }
