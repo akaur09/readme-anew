@@ -1,64 +1,84 @@
 // TODO: Include packages needed for this application
-
+const fs = require ("fs");
+const inquirer = require ("inquirer");
+const path = require("path");
+const genMrkDwn = require ("./generateMarkdown");
 // TODO: Create an array of questions for user input
 // Description, Table of Contents, Installation, Usage, License, Contributing, Tests, and Questions
 const questions = [
-    {
-        type: 'input',
-        name: 'title',
-        message: 'What is the title of your project?'
-    },
-    {
-        type: 'input',
-        name: 'description',
-        message: 'Describe your project.',
-    },
-    {
-        type: 'input',
-        name: 'installation',
-        message: 'What kind of installation is required for your project to work?',
-    },
-    {
-        type: 'input',
-        name: 'usage',
-        message: 'What is the use of this project?',
-    },
-    {
-        type: 'input',
-        name: 'contribution',
-        message: 'Who are the contributers for this project?',
-    },
-    {
-        type: 'input',
-        name: 'test',
-        message: 'What tests were done?',
-    },
-    {
-        type: 'input',
-        name: 'questions1',
-        message: 'Add a link to your Github profile for questions.',
-    },
-    {
-        type: 'input',
-        name: 'question2',
-        message: 'Add your email address to be reached for questions?',
-    },
-    {
-        type: 'list',
-        name: 'license',
-        message: 'What kind of lincense would you like to add',
-        choices: ['MIT','Apache','Modzilla Public','Boost Software','GNU General Public'],
-    },
+    "What is the title of your project?",
+    "Describe your project.",
+    "What kind of installation is required for your project to work?",
+    "What is the use of this project?",
+    "Who are the contributers for this project?",
+    "What tests were done?",
+    "Add a link to your Github profile for questions.",
+    "Add your email address to be reached for questions?",
+    "What kind of lincense would you like to add",
 ];
 
 // TODO: Create a function to write README file
 function writeToFile(newREADME, data) {
-    
+    fs.writeFileSync(path.join(process.cwd(),newREADME), data);
     console.log('README generated!')
 }
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    inquirer
+        .prompt([
+            {
+                type: 'input',
+                name: 'title',
+                message: questions[0],
+            },
+            {
+                type: 'input',
+                name: 'description',
+                message: questions[1],
+            },
+            {
+                type: 'input',
+                name: 'installation',
+                message: questions[2],
+            },
+            {
+                type: 'input',
+                name: 'usage',
+                message: questions[3],
+            },
+            {
+                type: 'input',
+                name: 'contribution',
+                message: questions[4],
+            },
+            {
+                type: 'input',
+                name: 'test',
+                message: questions[5],
+            },
+            {
+                type: 'input',
+                name: 'questions1',
+                message: questions[6],
+            },
+            {
+                type: 'input',
+                name: 'question2',
+                message: questions[7],
+            },
+            {
+                type: 'list',
+                name: 'license',
+                message: questions[8],
+                choices: ['MIT','Apache','Modzilla Public','Boost Software','GNU General Public'],
+            },
+        ])
+        .then (answers =>{
+            console.log(answers);
+            writeToFile("generateMD.md", genMrkDwn(answers));
+        })   
+}
 
 // Function call to initialize app
 init();
